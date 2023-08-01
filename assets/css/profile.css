@@ -1,0 +1,214 @@
+main {
+  background-color: #f5f6f7;
+}
+.profile {
+  padding: 10rem 0;
+}
+.profile__item {
+  background-color: var(--white-color);
+  margin-bottom: 3rem;
+  border-radius: 8px;
+  padding: 0px 3rem 3.8rem;
+  margin-bottom: 3rem;
+}
+.profile__content-title {
+  margin-top: 1.1rem;
+}
+.profile__content-title > h4 {
+  font-weight: 600;
+  font-size: 1.8rem;
+  margin-bottom: 0;
+  color: var(--text-category);
+  text-shadow: var(--primary-tshadow);
+}
+.profile__content-title > p {
+  font-weight: 500;
+  font-size: 1.3rem;
+}
+.profile__heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem 0 1.8rem;
+  margin-bottom: 2.5rem;
+  border-bottom: 1px solid #e8e8e8;
+}
+.profile__heading > h3 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--text-category);
+}
+
+.profile__heading-btn {
+  border: none;
+  font-size: 1.45rem;
+  font-weight: 600;
+  border-radius: 6px;
+  letter-spacing: 0.3px;
+  padding: 6px 1.5rem;
+  white-space: nowrap;
+  text-transform: capitalize;
+  color: #119744;
+  background: #ddffd5;
+  text-shadow: var(--primary-tshadow);
+  transition: all linear 0.3s;
+}
+.profile__heading-btn:hover {
+  color: var(--white-color);
+  background: var(--main-color);
+}
+
+.profile__img {
+  text-align: center;
+}
+
+.profile__img a {
+  border: 2px solid var(--main-color);
+  border-radius: 50%;
+  padding: 2px;
+  overflow: hidden;
+  cursor: default;
+  width: 10rem;
+  height: 10rem;
+  transition: all linear 0.3s;
+}
+.profile__img img {
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+  width: 10rem;
+  height: 10rem;
+}
+.profile__content .form-control {
+  width: 100%;
+  height: 4.4rem;
+  border-radius: 8px;
+  padding: 0px 2rem 2px;
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: var(--text-category);
+  background: #f5f5f5;
+  border: 1px solid #e8e8e8;
+}
+
+.profile__content .form-control:focus {
+  border-color: var(--main-color);
+  box-shadow: 0 0 0 0.25rem rgba(129, 196, 8, 0.25);
+}
+
+.profile__content .form-label {
+  font-weight: 500;
+  margin: 0px 0px 7px 3px;
+  white-space: nowrap;
+  text-transform: capitalize;
+  font-size: 1.5rem;
+}
+.profile__content-btn {
+  margin-top: 3.2rem;
+  /* background: var(--main-color); */
+  overflow: hidden;
+  transition: all linear 0.3s;
+  text-align: center;
+}
+.profile__content-btn a:hover,
+.btn__submit:hover {
+  color: var(--white-color);
+  background: var(--main-color);
+}
+
+.profile__content-btn a,
+.btn__submit {
+  padding: 1rem 1.3rem;
+  font-size: 1.4rem;
+  text-align: center;
+  text-transform: capitalize;
+  font-weight: 600;
+  border-radius: 8px;
+  color: #119744;
+  background: #ddffd5;
+  transition: all linear 0.3s;
+}
+.btn__submit {
+  padding: 1.39rem 1.3rem;
+}
+
+/* <!-- subscribe --> */
+.subsc {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 7rem 0;
+  position: relative;
+}
+
+.subsc::after {
+  position: absolute;
+  content: "";
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  /* background: linear-gradient(
+    to left,
+    rgba(6, 23, 56, 0.6),
+    rgba(17, 151, 68, 0.4)
+  ); */
+
+  background: linear-gradient(
+    to right,
+    rgba(6, 23, 56, 0.8),
+    rgba(17, 151, 68, 0.8)
+  );
+}
+.subsc__input input {
+  background-color: var(--white-color);
+  font-size: 1.3rem;
+  padding: 0 1.6rem;
+  height: 5rem;
+  border: none;
+  border-radius: 5px;
+  width: 100%;
+  cursor: pointer;
+}
+.subsc__input-btn {
+  position: absolute;
+  top: 6%;
+  right: 3px;
+}
+.subsc__btn {
+  padding: 1.4rem 1.6rem;
+  font-size: 1.4rem;
+  border-radius: 5px;
+}
+.subsc__btn i {
+  font-size: 1.4rem;
+}
+
+.subsc__title {
+  font-size: 3.5rem;
+  color: var(--white-color);
+  font-weight: 600;
+  text-shadow: var(--primary-tshadow);
+}
+
+.subsc__desc {
+  font-size: 1.6rem;
+  color: var(--white-color);
+  text-shadow: var(--primary-tshadow);
+}
+
+.bg-dangerr {
+  background-color: rgb(250, 206, 210) !important;
+  color: rgb(169, 3, 18) !important;
+}
+
+.bg-dangerr:hover {
+  background-color: rgba(187, 4, 19, 0.8) !important;
+  color: var(--white-color) !important;
+}
+
+.form__btn-btn {
+  font-size: 1.4rem;
+  padding: 6px 1.2rem;
+  font-weight: 500;
+}

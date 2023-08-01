@@ -1,0 +1,234 @@
+.main {
+  background-color: #f5f6f7;
+  height: 100vh;
+}
+
+.user__form-logo {
+  margin-top: 2.4rem;
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.user__form-card {
+  padding: 3rem;
+  border-radius: 0.8rem;
+  margin-bottom: 2rem;
+  background: var(--white-color);
+  border: 1px solid #e8e8e8;
+}
+
+.user__form-title {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.user__form-title h2 {
+  font-size: 2.8rem;
+  font-weight: 600;
+  line-height: 3.6rem;
+  margin-bottom: 0.5rem;
+  color: var(--main-color);
+}
+
+.user__form-title p {
+  text-transform: capitalize;
+  font-size: 1.5rem;
+  color: var(--text-title);
+  font-weight: 500;
+}
+
+.user__form-group {
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  flex-direction: row-reverse;
+}
+
+.user__form-social {
+  width: 100%;
+  margin-left: -2rem;
+}
+
+.user__form-social li {
+  margin-bottom: 2rem;
+  list-style: none;
+}
+.user__form-social li a:hover {
+  opacity: 0.7;
+}
+
+.user__form-social li a {
+  width: 100%;
+  font-size: 1.4rem;
+  padding: 1rem 0px;
+  border-radius: 0.8rem;
+  letter-spacing: 0.3px;
+  text-align: center;
+  text-transform: capitalize;
+  color: var(--white-color);
+  background: var(--main-color);
+  font-weight: 500;
+  transition: all 0.2s linear;
+}
+
+.user__form-social li a i {
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+.user__form-social .facebook {
+  background: var(--facebook);
+}
+
+.user__form-social .twitter {
+  background: var(--twitter);
+}
+
+.user__form-social .google {
+  background: var(--google);
+}
+
+.user__form-social .instagram {
+  background: var(--instagram);
+}
+
+.user__form-divider {
+  width: 1px;
+  height: 24rem;
+  margin: 0 5rem;
+  background: #e8e8e8;
+  position: relative;
+  z-index: 1;
+}
+
+.user__form-divider p {
+  width: 4rem;
+  height: 4rem;
+  font-size: 1.4rem;
+  font-weight: 500;
+  margin: 0 auto;
+  font-style: italic;
+  line-height: 3.8rem;
+  border-radius: 50%;
+  text-align: center;
+  color: #777777;
+  background: var(--white-color);
+  border: 1px solid #e8e8e8;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  transform: translate(-50%, -50%);
+}
+
+.user__form {
+  width: 100%;
+}
+
+.user__form .form-group {
+  margin-bottom: 2rem;
+}
+
+.form-button {
+  text-align: center;
+}
+.form__input {
+  width: 100%;
+  height: 4.5rem;
+  border-radius: 0.6rem;
+  padding: 0px 1.4rem;
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: var(--text-desc);
+  background-color: var(--white-color);
+  border: 1px solid #e5e5e5;
+}
+.form__input:focus {
+  border-color: var(--main-color);
+  box-shadow: 0 0 0 0.25rem rgba(129, 196, 8, 0.25);
+}
+.form-check {
+  font-size: 1.4rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+.form-button button {
+  width: 100%;
+  height: 4.5rem;
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 4.5rem;
+  border-radius: 0.8rem;
+  letter-spacing: 0.3px;
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--white-color);
+  background: var(--main-color);
+  border: 1px solid transparent;
+  transition: all 0.3s ease-in-out;
+}
+.form-button button:hover {
+  background-color: var(--white-color);
+  color: var(--main-color);
+  border: 1px solid var(--main-color);
+}
+
+.form-button p {
+  font-size: 1.4rem;
+  margin-top: 1.6rem;
+  text-transform: capitalize;
+}
+
+.form-button p a {
+  font-weight: 500;
+  margin-left: 0.5rem;
+  color: var(--main-color);
+}
+
+.form-button p a:hover {
+  text-decoration: underline;
+}
+
+.user__form-remind {
+  padding: 2rem;
+  border-radius: 0.8rem;
+  text-align: center;
+  background: var(--white-color);
+  border: 1px solid #e8e8e8;
+}
+
+.user__form-remind p {
+  font-size: 1.4rem;
+  text-transform: capitalize;
+}
+
+.user__form-remind p a {
+  font-weight: 500;
+  margin-left: 5px;
+  color: var(--main-color);
+}
+
+.user__form-remind p a:hover {
+  text-decoration: underline;
+}
+
+.user__form-footer {
+  text-align: center;
+  margin-top: 2.5rem;
+  margin-bottom: 4rem;
+}
+
+.user__form-footer p {
+  font-size: 1.3rem;
+  color: var(--text-title);
+}
+
+.user__form-footer p a {
+  color: var(--main-color);
+  transition: all linear 0.3s;
+  font-weight: 500;
+}
+
+.user__form-footer p a:hover {
+  text-decoration: underline;
+}

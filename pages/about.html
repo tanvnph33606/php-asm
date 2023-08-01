@@ -1,0 +1,1024 @@
+<?php
+// Kết nối đến cơ sở dữ liệu
+require_once '../admin/connect.php';
+
+
+
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Giới thiệu</title>
+
+    <!-- font themify -->
+    <link
+      rel="stylesheet"
+      href="../assets/font/themify-icons/themify-icons.css"
+    />
+
+    <!-- font awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+
+    <!-- aos -->
+    <link rel="stylesheet" href="../assets/library/aos-master/dist/aos.css" />
+
+    <!-- slick -->
+
+    <link
+      rel="stylesheet"
+      href="../assets/library/slick-1.8.1/slick/slick.css"
+    />
+    <link
+      rel="stylesheet"
+      href="../assets/library/slick-1.8.1/slick/slick-theme.css"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../assets/css/normalize.css" />
+    <link rel="stylesheet" href="../assets/css/base.css" />
+    <link rel="stylesheet" href="../assets/css/about.css" />
+
+    <!-- favicon -->
+    <link
+      rel="shortcut icon"
+      href="../assets/img/shape32.png"
+      type="image/x-icon"
+    />
+  </head>
+
+  <body data-aos-easing="ease" data-aos-duration="400" data-aos-delay="0">
+    <!-- header -->
+    <div class="main">
+      <header class="">
+        <div class="header sticky">
+          <div class="container position-relative">
+            <!-- logo -->
+            <div class="row justify-content-center align-items-center g-2 py-4">
+              <div class="col-xl-2">
+                <div class="header__logo">
+                  <a href="../index.html">
+                    <img src="../assets/img/logo .png" alt="" />
+                  </a>
+                </div>
+              </div>
+
+              <!-- navbar -->
+
+              <div class="col-lg-6">
+                <nav class="header__nav">
+                  <ul
+                    class="nav_ul d-flex justify-content-center p-0 align-content-center m-0"
+                  >
+                    <li class="nav__li">
+                      <a href="../index.html" class="nav__link">Trang chủ</a>
+                    </li>
+                    <li class="nav__li">
+                      <a href="../pages/about.html" class="nav__link"
+                        >Giới thiệu</a
+                      >
+                    </li>
+                    <li class="nav__li">
+                      <div class="dropdown">
+                        <a
+                          class="nav__link dropdown-toggle text-capitalize"
+                          href="../pages/product.html"
+                          role="button"
+                          data-bs-toggle="dropdown"
+                          aria-expanded="false"
+                        >
+                          Sản phẩm
+                        </a>
+
+                        <ul class="dropdown-menu">
+                          <li>
+                            <a
+                              class="dropdown-item"
+                              href="../pages/product.html"
+                              >Rau các loại</a
+                            >
+                          </li>
+                          <li>
+                            <a
+                              class="dropdown-item"
+                              href="../pages/product.html"
+                              >Thực phẩm
+                            </a>
+                          </li>
+                          <li>
+                            <a
+                              class="dropdown-item"
+                              href="../pages/product.html"
+                              >Trái cây</a
+                            >
+                          </li>
+                          <li>
+                            <a
+                              class="dropdown-item"
+                              href="../pages/product.html"
+                              >Các loại củ</a
+                            >
+                          </li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li class="nav__li">
+                      <a href="../pages/news.html" class="nav__link">Tin tức</a>
+                    </li>
+                    <li class="nav__li">
+                      <a href="../pages/contact.html" class="nav__link"
+                        >Liên hệ</a
+                      >
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+              <div class="col-lg-4">
+                <div
+                  class="header__user d-flex justify-content-end align-items-center"
+                >
+                  <form
+                    action=""
+                    method=""
+                    class="d-flex"
+                    style="margin-right: 30px"
+                  >
+                    <div class="position-relative">
+                      <input
+                        type="email"
+                        class="header__user-search-input"
+                        placeholder="Tìm sản phẩm"
+                      />
+                    </div>
+                    <button
+                      type="submit"
+                      class="position-absolute"
+                      style="right: 33%"
+                    >
+                      <a
+                        class="header__user-link"
+                        style="background-color: transparent"
+                      >
+                        <i
+                          class="ti-search user__icon-search"
+                          style="color: var(--text-desc)"
+                        ></i>
+                      </a>
+                    </button>
+                  </form>
+
+                  <!-- collapse user -->
+
+                  <a
+                    class="position-relative header__user-link"
+                    role="button"
+                    aria-expanded="false"
+                    aria-controls="collapseExample"
+                    data-bs-toggle="collapse"
+                    href="#header__user"
+                  >
+                    <i class="ti-user user__icon"></i>
+                  </a>
+
+                  <!-- có tài khoản -->
+                  <!-- <div class="collapse header__has-profile" id="header__user">
+                    <div class="header__profile-content">
+                      <div class="header__profile-info">
+                        <div class="header__profile-thumb">
+                          <img
+                            src="../assets/img/meta1.png"
+                            alt="header__profile"
+                          />
+                        </div>
+                        <div class="header__profile-name">
+                          <h4 class="text-capitalize">Vũ Ngọc Tân</h4>
+                        </div>
+                      </div>
+
+                      <ul class="header__profile-option">
+                        <li>
+                          <a href="#!"
+                            ><i class="fas fa-user-circle"></i> Thông tin</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#!"
+                            ><i class="fas fa-user-cog"></i> Cài đặt</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#!"
+                            ><i class="fas fa-sign-out-alt"></i> Đăng xuất</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </div> -->
+
+                  <!-- chưa có tài khoản -->
+                  <div class="collapse header__not-profile" id="header__user">
+                    <div class="header__profile-content">
+                      <div style="opacity: 0.85" class="header__profile-info">
+                        <div class="header__profile-thumb">
+                          <img
+                            src="../assets/img/not-acc.png"
+                            alt="header__profile"
+                          />
+                        </div>
+                        <div class="header__profile-name">
+                          <a href="../pages/login.html" class="text-capitalize">
+                            Đăng nhập
+                          </a>
+                        </div>
+                      </div>
+
+                      <ul class="header__profile-option">
+                        <li class="opacity-50 disabled-link">
+                          <a href="#!"
+                            ><i class="fas fa-user-circle"></i> Thông tin</a
+                          >
+                        </li>
+                        <li class="opacity-50 disabled-link">
+                          <a href="#!"
+                            ><i class="fas fa-user-cog"></i> Cài đặt</a
+                          >
+                        </li>
+                        <li class="opacity-50 disabled-link">
+                          <a href="#!"
+                            ><i class="fas fa-sign-out-alt"></i> Đăng xuất</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <!-- cart -->
+
+                  <a
+                    class="header__user-link user__icon-link"
+                    href="#"
+                    data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasRight"
+                    aria-controls="offcanvasRight"
+                  >
+                    <i class="ti-shopping-cart user__icon"></i>
+                    <span class="position-absolute user__icon-link-aleart">
+                      2
+                    </span>
+                  </a>
+
+                  <!-- cart-canvas -->
+                  <section class="cart">
+                    <div
+                      class="offcanvas offcanvas-end cart__main"
+                      tabindex="-1"
+                      id="offcanvasRight"
+                      aria-labelledby="offcanvasRightLabel"
+                    >
+                      <div class="offcanvas-header cart__heading">
+                        <h5
+                          class="offcanvas-title cart__title"
+                          id="offcanvasRightLabel"
+                        >
+                          Giỏ hàng
+                        </h5>
+                        <button
+                          type="button"
+                          class="btn-close cart__btn"
+                          data-bs-dismiss="offcanvas"
+                          aria-label="Close"
+                        ></button>
+                      </div>
+                      <div class="offcanvas-body">
+                        <div class="cart__body">
+                          <!-- item -->
+                          <div class="cart__item">
+                            <div class="cart__item-thumb">
+                              <img
+                                src="../assets/img/offer1.png"
+                                alt="cart__item-thumb"
+                              />
+                            </div>
+                            <div class="cart__item-text">
+                              <div class="cart__item-heading">
+                                <a href="#" class="cart__item-name"
+                                  >Súp lơ trắng</a
+                                >
+                                <a href="#" class="cart__item-remove">
+                                  <i class="fa-solid fa-xmark"></i>
+                                </a>
+                              </div>
+
+                              <div class="cart__item-price">
+                                <div
+                                  id="cart__item-price-new"
+                                  class="cart__item-price-new"
+                                >
+                                  50000đ
+                                </div>
+                                <div class="cart__item-count">
+                                  <button id="price-minus" class="price-minus">
+                                    <i class="fa-solid fa-minus"></i>
+                                  </button>
+                                  <span
+                                    id="cart__item-amount"
+                                    class="cart__item-amount"
+                                    >1</span
+                                  >
+                                  <button id="price-plus" class="price-plus">
+                                    <i class="fa-solid fa-plus"></i>
+                                  </button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <!-- item -->
+                          <div class="cart__item">
+                            <div class="cart__item-thumb">
+                              <img
+                                src="../assets/img/offer2.png"
+                                alt="cart__item-thumb"
+                              />
+                            </div>
+                            <div class="cart__item-text">
+                              <div class="cart__item-heading">
+                                <a href="#" class="cart__item-name"
+                                  >Súp lơ trắng</a
+                                >
+                                <a href="#" class="cart__item-remove">
+                                  <i class="fa-solid fa-xmark"></i>
+                                </a>
+                              </div>
+
+                              <div class="cart__item-price">
+                                <div
+                                  id="cart__item-price-new"
+                                  class="cart__item-price-new"
+                                >
+                                  50.000đ
+                                </div>
+                                <div class="cart__item-count">
+                                  <button id="price-minus" class="price-minus">
+                                    <i class="fa-solid fa-minus"></i>
+                                  </button>
+                                  <span
+                                    id="cart__item-amount"
+                                    class="cart__item-amount"
+                                    >1</span
+                                  >
+                                  <button id="price-plus" class="price-plus">
+                                    <i class="fa-solid fa-plus"></i>
+                                  </button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <!-- item -->
+                          <div class="cart__item">
+                            <div class="cart__item-thumb">
+                              <img
+                                src="../assets/img/offer3.png"
+                                alt="cart__item-thumb"
+                              />
+                            </div>
+                            <div class="cart__item-text">
+                              <div class="cart__item-heading">
+                                <a href="#" class="cart__item-name"
+                                  >Súp lơ trắng</a
+                                >
+                                <a href="#" class="cart__item-remove">
+                                  <i class="fa-solid fa-xmark"></i>
+                                </a>
+                              </div>
+
+                              <div class="cart__item-price">
+                                <div
+                                  id="cart__item-price-new"
+                                  class="cart__item-price-new"
+                                >
+                                  50.000đ
+                                </div>
+                                <div class="cart__item-count">
+                                  <button id="price-minus" class="price-minus">
+                                    <i class="fa-solid fa-minus"></i>
+                                  </button>
+                                  <span
+                                    id="cart__item-amount"
+                                    class="cart__item-amount"
+                                    >1</span
+                                  >
+                                  <button id="price-plus" class="price-plus">
+                                    <i class="fa-solid fa-plus"></i>
+                                  </button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- bot -->
+                      <div class="cart-footer">
+                        <div class="cart__total">
+                          <span class="cart__total-title">Tổng tiền</span>
+                          <span class="cart__total-price">500.000đ</span>
+                        </div>
+                        <ul class="cart__ul">
+                          <li class="cart__li"><a href="#">Xem giỏ hàng</a></li>
+                          <li class="cart__li"><a href="#">Thanh toán</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </section>
+                </div>
+              </div>
+            </div>
+
+            <!-- <div class="header__thumb">
+              <img src="../assets/img/shape1.png" alt="" />
+            </div> -->
+          </div>
+        </div>
+      </header>
+
+      <!-- breadcrumb -->
+      <section class="breadcrumbb">
+        <div
+          style="background-image: url(../assets/img/single-banner.jpg)"
+          class="breadcrumb__main d-flex flex-column justify-content-center text-center align-items-center"
+        >
+          <div class="container z-1">
+            <div class="row">
+              <div
+                class="col-lg-12 d-flex flex-column justify-content-center align-items-center"
+              >
+                <h2 class="breadcrumb__title">Giới thiệu về chúng tôi</h2>
+                <nav class="mt-3">
+                  <ol
+                    class="breadcrumb__list d-flex justify-content-center align-items-center"
+                  >
+                    <li class="breadcrumb__item">
+                      <a href="../index.html">Trang chủ</a>
+                    </li>
+                    <span class="breadcrumb__icon">
+                      <i class="ti-angle-right"></i
+                    ></span>
+                    <li class="breadcrumb__item active">Giới thiệu</li>
+                  </ol>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- about_company -->
+
+      <section
+        class="about"
+        data-aos="fade-up"
+        data-aos-easing="linear"
+        data-aos-duration="1000"
+      >
+        <div class="container">
+          <div class="row gx-5">
+            <div
+              class="col-lg-6"
+              class="col-lg-6"
+              class="about"
+              data-aos="fade-right"
+              data-aos-duration="1000"
+            >
+              <div class="row g-3">
+                <div class="col-6">
+                  <img
+                    class="about__img"
+                    src="../assets/img/01.jpg"
+                    alt="about__img"
+                  />
+                </div>
+                <div class="col-6">
+                  <img
+                    class="about__img"
+                    src="../assets/img/02.jpg"
+                    alt="about__img"
+                  />
+                </div>
+                <div class="col-6">
+                  <img
+                    class="about__img"
+                    src="../assets/img/03.jpg"
+                    alt="about__img"
+                  />
+                </div>
+                <div class="col-6">
+                  <img
+                    class="about__img"
+                    src="../assets/img/04.jpg"
+                    alt="about__img"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="col-lg-6"
+              class="about"
+              data-aos="fade-left"
+              data-aos-duration="1000"
+            >
+              <div class="about__content ps-5 text-lg-end">
+                <h2 class="about__title">
+                  Công ty của chúng tôi là cung cấp tốt nhất cho những người
+                  xứng đáng
+                </h2>
+                <p class="about__desc">
+                  Chúng tôi là công ty thương mại điện tử chuyên cung cấp các
+                  thực phẩm hữu cơ và tự nhiên với chuỗi cửa hàng thực phẩm hữu
+                  cơ với mục tiêu giúp người tiêu dùng Việt Nam có một cuộc sống
+                  khỏe mạnh hơn thông qua những loại thực phẩm hữu cơ có chứng
+                  nhận, thực phẩm tự nhiên và không có nguồn gốc biến đổi gene
+                  (GMO). Chúng tôi lựa chọn các loại thực phẩm hữu cơ, thực phẩm
+                  tự nhiên từ các nhà sản xuất, các công ty trong và ngoài nước
+                  thông qua quá trình lựa chọn kỹ càng về khả năng cung ứng, các
+                  giấy chứng nhận tiêu chuẩn do các tổ chức uy tín thế giới cấp.
+                </p>
+                <div class="about__list">
+                  <div class="row gx-5">
+                    <div class="col about__item">
+                      <h5 class="about__list-num">183</h5>
+                      <div class="about__list-text text-capitalize">
+                        Tổng sản phẩm
+                      </div>
+                    </div>
+                    <div class="col about__item">
+                      <h5 class="about__list-num">24658</h5>
+                      <div class="about__list-text text-capitalize">
+                        khách truy cập mỗi ngày
+                      </div>
+                    </div>
+                    <div class="col about__item">
+                      <h5 class="about__list-num">720356</h5>
+                      <div class="about__list-text text-capitalize">
+                        Người dùng đã đăng ký
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- comment -->
+
+      <section
+        style="background-image: url(../assets/img/testimonial-shape.png)"
+        class="comment position-relative"
+        data-aos="fade-up"
+        data-aos-easing="linear"
+        data-aos-duration="1000"
+      >
+        <div class="container">
+          <div class="row">
+            <div class="comment__list">
+              <div class="comment__item">
+                <div
+                  class="col-lg-12 d-flex justify-content-center align-items-center"
+                >
+                  <div class="comment__img position-relative">
+                    <div>
+                      <img
+                        class="comment__img-avt"
+                        src="../assets/img/testimonial3.png"
+                        alt="comment__img"
+                      />
+                    </div>
+
+                    <div class="comment__thumb-left position-absolute">
+                      <img
+                        src="../assets/img/shape32.png "
+                        alt="comment__img"
+                      />
+                    </div>
+                    <div class="comment__thumb-right position-absolute">
+                      <img src="../assets/img/shape24.png" alt="comment__img" />
+                    </div>
+                  </div>
+                  <div class="comment__content mt-3">
+                    <div class="comment__icon">
+                      <i class="fas fa-quote-left"></i>
+                    </div>
+                    <div class="comment__desc">
+                      Tôi hài lòng với sản phẩm nhờ dịch vụ của bạn mà thu hút
+                      được rất nhiều khách hàng. Tôi đánh giá cao đội ngũ chăm
+                      sóc khách hàng luôn tận tình và luôn tư vấn cho tôi những
+                      tính năng mới, thuận tiện cho việc bán hàng online.
+                    </div>
+                    <div
+                      class="comment__name text-capitalize d-flex align-items-center"
+                    >
+                      <span>Trần anh đức </span>
+                      <span> - lập trình viên</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="comment__item">
+                <div
+                  class="col-lg-12 d-flex justify-content-center align-items-center"
+                >
+                  <div class="comment__img position-relative">
+                    <div>
+                      <img
+                        class="comment__img-avt"
+                        src="../assets/img/ca-si-son-tung-mtp-4.jpg"
+                        alt="comment__img"
+                      />
+                    </div>
+
+                    <div class="comment__thumb-left position-absolute">
+                      <img
+                        src="../assets/img/shape32.png "
+                        alt="comment__img"
+                      />
+                    </div>
+                    <div class="comment__thumb-right position-absolute">
+                      <img src="../assets/img/shape24.png" alt="comment__img" />
+                    </div>
+                  </div>
+                  <div class="comment__content mt-3">
+                    <div class="comment__icon">
+                      <i class="fas fa-quote-left"></i>
+                    </div>
+                    <div class="comment__desc">
+                      Tôi hài lòng với sản phẩm nhờ dịch vụ của bạn mà thu hút
+                      được rất nhiều khách hàng. Tôi đánh giá cao đội ngũ chăm
+                      sóc khách hàng luôn tận tình và luôn tư vấn cho tôi những
+                      tính năng mới, thuận tiện cho việc bán hàng online.
+                    </div>
+                    <div
+                      class="comment__name text-capitalize d-flex align-items-center"
+                    >
+                      <span>Sơn Tùng MTP </span>
+                      <span> - Ca sĩ</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="comment__item">
+                <div
+                  class="col-lg-12 d-flex justify-content-center align-items-center"
+                >
+                  <div class="comment__img position-relative">
+                    <div>
+                      <img
+                        class="comment__img-avt"
+                        src="../assets/img/tieu-su-ca-si-mono-17.jpg"
+                        alt="comment__img"
+                      />
+                    </div>
+
+                    <div class="comment__thumb-left position-absolute">
+                      <img
+                        src="../assets/img/shape32.png "
+                        alt="comment__img"
+                      />
+                    </div>
+                    <div class="comment__thumb-right position-absolute">
+                      <img src="../assets/img/shape24.png" alt="comment__img" />
+                    </div>
+                  </div>
+                  <div class="comment__content mt-3">
+                    <div class="comment__icon">
+                      <i class="fas fa-quote-left"></i>
+                    </div>
+                    <div class="comment__desc">
+                      Tôi hài lòng với sản phẩm nhờ dịch vụ của bạn mà thu hút
+                      được rất nhiều khách hàng. Tôi đánh giá cao đội ngũ chăm
+                      sóc khách hàng luôn tận tình và luôn tư vấn cho tôi những
+                      tính năng mới, thuận tiện cho việc bán hàng online.
+                    </div>
+                    <div
+                      class="comment__name text-capitalize d-flex align-items-center"
+                    >
+                      <span>Mono </span>
+                      <span> - Ca sĩ</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="comment__thumb-2left position-absolute"
+          class="comment position-relative"
+          data-aos="fade-right"
+          data-aos-duration="1000"
+        >
+          <img src="../assets/img/shape11.png" alt="comment__thumb" />
+        </div>
+        <div
+          class="comment__thumb-2right position-absolute"
+          class="comment position-relative"
+          data-aos="fade-left"
+          data-aos-duration="1000"
+        >
+          <img src="../assets/img/shape12.png" alt="comment__thumb" />
+        </div>
+      </section>
+
+      <!-- why-choose -->
+
+      <section class="choose">
+        <div class="container">
+          <div class="row">
+            <h2
+              class="choose__title text-capitalize"
+              class="col-lg-6"
+              data-aos="fade-up"
+              data-aos-duration="1000"
+            >
+              Tại sao mọi người chọn cuộc sống hữu cơ với chúng tôi
+            </h2>
+          </div>
+          <div class="row g-5">
+            <div
+              class="col-lg-6"
+              data-aos="fade-right"
+              data-aos-duration="1000"
+            >
+              <div class="choose__item">
+                <div class="choose__icon">
+                  <i class="fa-solid fa-truck"></i>
+                </div>
+                <div class="choose__text">
+                  <h5 class="text-capitalize mb-4">
+                    Giao hàng trong vòng 1 giờ
+                  </h5>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                    Illo quod voluptate odio odit, placeat explicabo in est
+                    fugit voluptatibus, nobis doloremque laboriosam rerum,
+                    consectetur sit omnis assumenda numquam! Assumenda, culpa?
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-6" data-aos="fade-left" data-aos-duration="1000">
+              <div class="choose__item">
+                <div class="choose__icon">
+                  <i class="fa-solid fa-carrot"></i>
+                </div>
+                <div class="choose__text">
+                  <h5 class="text-capitalize mb-4">
+                    100% Thực Phẩm Hữu Cơ Tươi Sống
+                  </h5>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                    Illo quod voluptate odio odit, placeat explicabo in est
+                    fugit voluptatibus, nobis doloremque laboriosam rerum,
+                    consectetur sit omnis assumenda numquam! Assumenda, culpa?
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="col-lg-6"
+              data-aos="fade-right"
+              data-aos-duration="1500"
+            >
+              <div class="choose__item">
+                <div class="choose__icon">
+                  <i class="fa-solid fa-headset"></i>
+                </div>
+                <div class="choose__text">
+                  <h5 class="text-capitalize mb-4">Hỗ trợ tức thì</h5>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                    Illo quod voluptate odio odit, placeat explicabo in est
+                    fugit voluptatibus, nobis doloremque laboriosam rerum,
+                    consectetur sit omnis assumenda numquam! Assumenda, culpa?
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-6" data-aos="fade-left" data-aos-duration="1500">
+              <div class="choose__item">
+                <div class="choose__icon">
+                  <i class="fa-solid fa-arrow-rotate-left"></i>
+                </div>
+                <div class="choose__text">
+                  <h5 class="text-capitalize mb-4">
+                    Chính sách đổi trả nhanh tróng
+                  </h5>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                    Illo quod voluptate odio odit, placeat explicabo in est
+                    fugit voluptatibus, nobis doloremque laboriosam rerum,
+                    consectetur sit omnis assumenda numquam! Assumenda, culpa?
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- subscribe -->
+
+      <section
+        style="background-image: url(../assets/img/newsletter.jpg)"
+        class="subsc"
+        data-aos="fade-up"
+        data-aos-duration="1000"
+      >
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-lg-6 z-1">
+              <form action="" method="">
+                <div class="subsc__input position-relative">
+                  <input
+                    type="email"
+                    name=""
+                    id=""
+                    placeholder="Nhập địa chỉ email của bạn"
+                    class=""
+                  />
+                  <div class="subsc__input-btn">
+                    <button class="subsc__btn custom_btn text-uppercase">
+                      Đăng ký
+                      <i class="ti-arrow-right"></i>
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="col-lg-6 z-1 text-end ps-5">
+              <h2 class="subsc__title text-capitalize mb-2">
+                Nhận triết khấu 30% cho người đăng ký
+              </h2>
+              <p class="subsc__desc">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem
+                ipsum dolor sit amet consectetur adipisicing elit.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- footer -->
+      <footer>
+        <div class="footer">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-3 px-5">
+                <div class="footer__logo">
+                  <a class="text-white" href="../index.html">
+                    <img src="../assets/img/logo .png" alt="footer_img" />
+                  </a>
+                </div>
+              </div>
+              <div class="col-lg-3 px-5">
+                <div class="footer__contact">Liên hệ</div>
+              </div>
+              <div class="col-lg-3 px-5">
+                <div class="footer__contact">Hỗ trợ khách hàng</div>
+              </div>
+              <div class="col-lg-3 px-5">
+                <div class="footer__contact">Tải xuống</div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-3 px-5">
+                <div class="footer__desc">
+                  <p>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                    Dignissimos commodi sed tenetur aut minus iusto ex
+                    necessitatibus architecto ea error velit odit nesciunt harum
+                    illo excepturi quaerat blanditiis, alias id?
+                  </p>
+                </div>
+              </div>
+
+              <div class="col-lg-3 px-5">
+                <div class="footer__desc">
+                  <a href="">Email: tanvnph33606@fpt.edu.vn</a>
+                </div>
+                <div class="footer__desc">
+                  <a href="">Phone: 0332225690</a>
+                </div>
+                <div class="footer__desc">
+                  <a href="">
+                    Address: 54A Đ. Nguyễn Chí Thanh, Láng Thượng, Đống Đa, Hà
+                    Nội
+                  </a>
+                </div>
+              </div>
+
+              <div class="col-lg-3 px-5">
+                <div class="footer__desc">
+                  <a href="">Email: tanvnph33606@fpt.edu.vn</a>
+                </div>
+                <div class="footer__desc">
+                  <a href="">Phone: 0332225690</a>
+                </div>
+                <div class="footer__desc">
+                  <a href="">
+                    Address: 54A Đ. Nguyễn Chí Thanh, Láng Thượng, Đống Đa, Hà
+                    Nội
+                  </a>
+                </div>
+              </div>
+
+              <div class="col-lg-3 px-5">
+                <div class="footer__desc">
+                  <p>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                    Dignissimos commodi sed tenetur aut minus iusto ex
+                    necessitatibus architecto ea error velit odit nesciunt harum
+                    illo excepturi quaerat blanditiis, alias id?
+                  </p>
+                </div>
+                <div class="footer__bank d-flex">
+                  <img src="../assets/img/app-store.png" alt="footer" />
+                  <img src="../assets/img/google-store.png" alt="footer" />
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="footer__bot">
+                <div class="footer__bot-text">
+                  © All Copyrights Reserved by <span>Vũ Ngọc Tân</span>
+                </div>
+                <div class="footer__bot-bank">
+                  <div class="footer__bank-img">
+                    <img src="../assets/img/footer1.jpg" alt="footer1" />
+                  </div>
+                  <div class="footer__bank-img">
+                    <img src="../assets/img/footer2.jpg" alt="footer2" />
+                  </div>
+                  <div class="footer__bank-img">
+                    <img src="../assets/img/footer3.jpg" alt="footer1" />
+                  </div>
+                  <div class="footer__bank-img">
+                    <img src="../assets/img/footer4.jpg" alt="footer1" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <!-- boostrap -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- aos -->
+    <script src="../assets/library/aos-master/dist/aos.js"></script>
+
+    <!-- jquery -->
+
+    <script
+      src="https://code.jquery.com/jquery-3.7.0.min.js"
+      integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- slick -->
+    <script src="../assets/library/slick-1.8.1/slick/slick.min.js"></script>
+
+    <!-- main js -->
+    <script src="../assets/js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,884 @@
+<?php
+// Kết nối đến cơ sở dữ liệu
+require_once '../admin/connect.php';
+
+
+
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tin tức</title>
+
+    <!-- font themify -->
+    <link
+      rel="stylesheet"
+      href="../assets/font/themify-icons/themify-icons.css"
+    />
+
+    <!-- font awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+
+    <!-- aos -->
+    <link rel="stylesheet" href="../assets/library/aos-master/dist/aos.css" />
+
+    <!-- slick -->
+
+    <link
+      rel="stylesheet"
+      href="../assets/library/slick-1.8.1/slick/slick.css"
+    />
+    <link
+      rel="stylesheet"
+      href="../assets/library/slick-1.8.1/slick/slick-theme.css"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../assets/css/normalize.css" />
+    <link rel="stylesheet" href="../assets/css/base.css" />
+    <link rel="stylesheet" href="../assets/css/news.css" />
+
+    <!-- favicon -->
+    <link
+      rel="shortcut icon"
+      href="../assets/img/shape32.png"
+      type="image/x-icon"
+    />
+  </head>
+
+  <body data-aos-easing="ease" data-aos-duration="400" data-aos-delay="0">
+    <!-- header -->
+    <div class="main">
+      <header class="">
+        <div class="header sticky">
+          <div class="container position-relative">
+            <!-- logo -->
+            <div class="row justify-content-center align-items-center g-2 py-4">
+              <div class="col-xl-2">
+                <div class="header__logo">
+                  <a href="../index.html">
+                    <img src="../assets/img/logo .png" alt="" />
+                  </a>
+                </div>
+              </div>
+
+              <!-- navbar -->
+
+              <div class="col-lg-6">
+                <nav class="header__nav">
+                  <ul
+                    class="nav_ul d-flex justify-content-center p-0 align-content-center m-0"
+                  >
+                    <li class="nav__li">
+                      <a href="../index.html" class="nav__link">Trang chủ</a>
+                    </li>
+                    <li class="nav__li">
+                      <a href="../pages/about.html" class="nav__link"
+                        >Giới thiệu</a
+                      >
+                    </li>
+                    <li class="nav__li">
+                      <div class="dropdown">
+                        <a
+                          class="nav__link dropdown-toggle text-capitalize"
+                          href="../pages/product.html"
+                          role="button"
+                          data-bs-toggle="dropdown"
+                          aria-expanded="false"
+                        >
+                          Sản phẩm
+                        </a>
+
+                        <ul class="dropdown-menu">
+                          <li>
+                            <a
+                              class="dropdown-item"
+                              href="../pages/product.html"
+                              >Rau các loại</a
+                            >
+                          </li>
+                          <li>
+                            <a
+                              class="dropdown-item"
+                              href="../pages/product.html"
+                              >Thực phẩm
+                            </a>
+                          </li>
+                          <li>
+                            <a
+                              class="dropdown-item"
+                              href="../pages/product.html"
+                              >Trái cây</a
+                            >
+                          </li>
+                          <li>
+                            <a
+                              class="dropdown-item"
+                              href="../pages/product.html"
+                              >Các loại củ</a
+                            >
+                          </li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li class="nav__li">
+                      <a href="../pages/news.html" class="nav__link">Tin tức</a>
+                    </li>
+                    <li class="nav__li">
+                      <a href="../pages/contact.html" class="nav__link"
+                        >Liên hệ</a
+                      >
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+
+              <div class="col-lg-4">
+                <div
+                  class="header__user d-flex justify-content-end align-items-center"
+                >
+                  <form
+                    action=""
+                    method=""
+                    class="d-flex"
+                    style="margin-right: 30px"
+                  >
+                    <div class="position-relative">
+                      <input
+                        type="email"
+                        class="header__user-search-input"
+                        placeholder="Tìm sản phẩm"
+                      />
+                    </div>
+                    <button
+                      type="submit"
+                      class="position-absolute"
+                      style="right: 33%"
+                    >
+                      <a
+                        class="header__user-link"
+                        style="background-color: transparent"
+                      >
+                        <i
+                          class="ti-search user__icon-search"
+                          style="color: var(--text-desc)"
+                        ></i>
+                      </a>
+                    </button>
+                  </form>
+
+                  <!-- collapse user -->
+
+                  <a
+                    class="position-relative header__user-link"
+                    role="button"
+                    aria-expanded="false"
+                    aria-controls="collapseExample"
+                    data-bs-toggle="collapse"
+                    href="#header__user"
+                  >
+                    <i class="ti-user user__icon"></i>
+                  </a>
+
+                  <!-- có tài khoản -->
+                  <!-- <div class="collapse header__has-profile" id="header__user">
+                    <div class="header__profile-content">
+                      <div class="header__profile-info">
+                        <div class="header__profile-thumb">
+                          <img
+                            src="../assets/img/meta1.png"
+                            alt="header__profile"
+                          />
+                        </div>
+                        <div class="header__profile-name">
+                          <h4 class="text-capitalize">Vũ Ngọc Tân</h4>
+                        </div>
+                      </div>
+
+                      <ul class="header__profile-option">
+                        <li>
+                          <a href="#!"
+                            ><i class="fas fa-user-circle"></i> Thông tin</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#!"
+                            ><i class="fas fa-user-cog"></i> Cài đặt</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#!"
+                            ><i class="fas fa-sign-out-alt"></i> Đăng xuất</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </div> -->
+
+                  <!-- chưa có tài khoản -->
+                  <div class="collapse header__not-profile" id="header__user">
+                    <div class="header__profile-content">
+                      <div style="opacity: 0.85" class="header__profile-info">
+                        <div class="header__profile-thumb">
+                          <img
+                            src="../assets/img/not-acc.png"
+                            alt="header__profile"
+                          />
+                        </div>
+                        <div class="header__profile-name">
+                          <a href="../pages/login.html" class="text-capitalize">
+                            Đăng nhập
+                          </a>
+                        </div>
+                      </div>
+
+                      <ul class="header__profile-option">
+                        <li class="opacity-50 disabled-link">
+                          <a href="#!"
+                            ><i class="fas fa-user-circle"></i> Thông tin</a
+                          >
+                        </li>
+                        <li class="opacity-50 disabled-link">
+                          <a href="#!"
+                            ><i class="fas fa-user-cog"></i> Cài đặt</a
+                          >
+                        </li>
+                        <li class="opacity-50 disabled-link">
+                          <a href="#!"
+                            ><i class="fas fa-sign-out-alt"></i> Đăng xuất</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <!-- cart -->
+
+                  <a
+                    class="header__user-link user__icon-link"
+                    href="#"
+                    data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasRight"
+                    aria-controls="offcanvasRight"
+                  >
+                    <i class="ti-shopping-cart user__icon"></i>
+                    <span class="position-absolute user__icon-link-aleart">
+                      2
+                    </span>
+                  </a>
+
+                  <!-- cart-canvas -->
+                  <section class="cart">
+                    <div
+                      class="offcanvas offcanvas-end cart__main"
+                      tabindex="-1"
+                      id="offcanvasRight"
+                      aria-labelledby="offcanvasRightLabel"
+                    >
+                      <div class="offcanvas-header cart__heading">
+                        <h5
+                          class="offcanvas-title cart__title"
+                          id="offcanvasRightLabel"
+                        >
+                          Giỏ hàng
+                        </h5>
+                        <button
+                          type="button"
+                          class="btn-close cart__btn"
+                          data-bs-dismiss="offcanvas"
+                          aria-label="Close"
+                        ></button>
+                      </div>
+                      <div class="offcanvas-body">
+                        <div class="cart__body">
+                          <!-- item -->
+                          <div class="cart__item">
+                            <div class="cart__item-thumb">
+                              <img
+                                src="../assets/img/offer1.png"
+                                alt="cart__item-thumb"
+                              />
+                            </div>
+                            <div class="cart__item-text">
+                              <div class="cart__item-heading">
+                                <a href="#" class="cart__item-name"
+                                  >Súp lơ trắng</a
+                                >
+                                <a href="#" class="cart__item-remove">
+                                  <i class="fa-solid fa-xmark"></i>
+                                </a>
+                              </div>
+
+                              <div class="cart__item-price">
+                                <div
+                                  id="cart__item-price-new"
+                                  class="cart__item-price-new"
+                                >
+                                  50000đ
+                                </div>
+                                <div class="cart__item-count">
+                                  <button id="price-minus" class="price-minus">
+                                    <i class="fa-solid fa-minus"></i>
+                                  </button>
+                                  <span
+                                    id="cart__item-amount"
+                                    class="cart__item-amount"
+                                    >1</span
+                                  >
+                                  <button id="price-plus" class="price-plus">
+                                    <i class="fa-solid fa-plus"></i>
+                                  </button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <!-- item -->
+                          <div class="cart__item">
+                            <div class="cart__item-thumb">
+                              <img
+                                src="../assets/img/offer2.png"
+                                alt="cart__item-thumb"
+                              />
+                            </div>
+                            <div class="cart__item-text">
+                              <div class="cart__item-heading">
+                                <a href="#" class="cart__item-name"
+                                  >Súp lơ trắng</a
+                                >
+                                <a href="#" class="cart__item-remove">
+                                  <i class="fa-solid fa-xmark"></i>
+                                </a>
+                              </div>
+
+                              <div class="cart__item-price">
+                                <div
+                                  id="cart__item-price-new"
+                                  class="cart__item-price-new"
+                                >
+                                  50.000đ
+                                </div>
+                                <div class="cart__item-count">
+                                  <button id="price-minus" class="price-minus">
+                                    <i class="fa-solid fa-minus"></i>
+                                  </button>
+                                  <span
+                                    id="cart__item-amount"
+                                    class="cart__item-amount"
+                                    >1</span
+                                  >
+                                  <button id="price-plus" class="price-plus">
+                                    <i class="fa-solid fa-plus"></i>
+                                  </button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <!-- item -->
+                          <div class="cart__item">
+                            <div class="cart__item-thumb">
+                              <img
+                                src="../assets/img/offer3.png"
+                                alt="cart__item-thumb"
+                              />
+                            </div>
+                            <div class="cart__item-text">
+                              <div class="cart__item-heading">
+                                <a href="#" class="cart__item-name"
+                                  >Súp lơ trắng</a
+                                >
+                                <a href="#" class="cart__item-remove">
+                                  <i class="fa-solid fa-xmark"></i>
+                                </a>
+                              </div>
+
+                              <div class="cart__item-price">
+                                <div
+                                  id="cart__item-price-new"
+                                  class="cart__item-price-new"
+                                >
+                                  50.000đ
+                                </div>
+                                <div class="cart__item-count">
+                                  <button id="price-minus" class="price-minus">
+                                    <i class="fa-solid fa-minus"></i>
+                                  </button>
+                                  <span
+                                    id="cart__item-amount"
+                                    class="cart__item-amount"
+                                    >1</span
+                                  >
+                                  <button id="price-plus" class="price-plus">
+                                    <i class="fa-solid fa-plus"></i>
+                                  </button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- bot -->
+                      <div class="cart-footer">
+                        <div class="cart__total">
+                          <span class="cart__total-title">Tổng tiền</span>
+                          <span class="cart__total-price">500.000đ</span>
+                        </div>
+                        <ul class="cart__ul">
+                          <li class="cart__li"><a href="#">Xem giỏ hàng</a></li>
+                          <li class="cart__li"><a href="#">Thanh toán</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </section>
+                </div>
+              </div>
+            </div>
+
+            <!-- <div class="header__thumb">
+              <img src="../assets/img/shape1.png" alt="" />
+            </div> -->
+          </div>
+        </div>
+      </header>
+
+      <!-- breadcrumb -->
+      <section class="breadcrumbb">
+        <div
+          style="background-image: url(../assets/img/single-banner.jpg)"
+          class="breadcrumb__main d-flex flex-column justify-content-center text-center align-items-center"
+        >
+          <div class="container z-1">
+            <div class="row">
+              <div
+                class="col-lg-12 d-flex flex-column justify-content-center align-items-center"
+              >
+                <h2 class="breadcrumb__title">Tin tức về chúng tôi</h2>
+                <nav class="mt-3">
+                  <ol
+                    class="breadcrumb__list d-flex justify-content-center align-items-center"
+                  >
+                    <li class="breadcrumb__item">
+                      <a href="../index.html">Trang chủ</a>
+                    </li>
+                    <span class="breadcrumb__icon">
+                      <i class="ti-angle-right"></i
+                    ></span>
+                    <li class="breadcrumb__item active">Tin tức</li>
+                  </ol>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <main>
+        <!-- newss -->
+        <section class="news" data-aos="fade-up" data-aos-duration="1500">
+          <div class="container">
+            <div class="row mt-4 gx-5">
+              <div class="col-lg-8">
+                <div class="news__title-left">
+                  <h2>
+                    Rau xanh tăng giá mạnh vì trời mưa, người dân nội thành lao
+                    đao
+                  </h2>
+                </div>
+                <div class="row gx-5">
+                  <div class="col-lg-12">
+                    <div class="news__container">
+                      <div class="news__content">
+                        <div
+                          class="news__date d-flex justify-content-start align-items-center mt-0 mb-5"
+                        >
+                          <div>
+                            <i class="fa-solid fa-user"></i>
+                            <span class="pe-3 border-end">Admin</span>
+                          </div>
+                          <div>
+                            <i class="ps-3 fa-solid fa-calendar-days"></i>
+                            <span> Ngày 28/02/2022</span>
+                          </div>
+                        </div>
+
+                        <div class="news__desc news__desc--detail mb-4">
+                          Khoảng gần một tuần nay, do ảnh hưởng của những cơn
+                          mưa lớn kéo dài liên tiếp nên nguồn cung rau xanh cho
+                          các chợ bắt đầu khan hiếm, giá tăng mạnh, thậm chí
+                          nhiều loại giá tăng gần gấp đôi.
+                        </div>
+
+                        <div class="news__desc news__desc--detail">
+                          Cụ thể, tại chợ Dịch Vọng, rau dền, mồng tơi giá 8.000
+                          đồng/mớ, tăng 2.000 đồng/mớ; rau muống tăng 3000
+                          đồng/mớ lên 10.000 đồng/mớ; rau ngót cũng tăng 1.000
+                          đồng/mớ lên 7.000 đồng/mớ; cải xanh tăng từ 5.000 đồng
+                          lên 8.000 đồng/mớ; bắp cải tăng 3.000 đồng/kg lên
+                          15.000 đồng/kg; cải thảo tăng 5.000 đồng/kg lên 16.000
+                          đồng/kg, mướp đắng tăng 10.000 đồng/kg lên 16.000
+                          đồng/kg. Hành lá tăng giá mạnh nhất lên 60.000/kg.
+                        </div>
+                      </div>
+                      <!--  -->
+                      <div class="news__aticle">
+                        <div class="news__list-group">
+                          <div class="news__list-title">từ khóa:</div>
+                          <ul class="news__tag-list">
+                            <li><a href="#">organic</a></li>
+                            <li><a href="#">fruits</a></li>
+                            <li><a href="#">chilis</a></li>
+                          </ul>
+                        </div>
+                        <div class="news__list-group">
+                          <div class="news__list-title">chia sẻ:</div>
+
+                          <ul class="news__share-list">
+                            <li>
+                              <a href="#" class="fab fa-facebook-f"></a>
+                            </li>
+                            <li>
+                              <a href="#" class="fab fa-twitter"></a>
+                            </li>
+                            <li>
+                              <a href="#" class="fab fa-linkedin"></a>
+                            </li>
+                            <li>
+                              <a href="#" class="fab fa-instagram"></a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                      <!--  -->
+                      <div class="comment__form">
+                        <div class="container">
+                          <form action="" method="">
+                            <div class="row">
+                              <div class="col-lg-12">
+                                <h3 class="comment__form-title">
+                                  Viết bình luận của bạn:
+                                </h3>
+                              </div>
+                              <div class="col-lg-12">
+                                <div class="comment__form-rating text-center">
+                                  <div class="rating">
+                                    <input
+                                      value="star-1"
+                                      name="star-radio"
+                                      id="star-1"
+                                      type="radio"
+                                    />
+                                    <label for="star-1">
+                                      <svg
+                                        viewBox="0 0 24 24"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                      >
+                                        <path
+                                          d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"
+                                          pathLength="360"
+                                        ></path>
+                                      </svg>
+                                    </label>
+                                    <input
+                                      value="star-1"
+                                      name="star-radio"
+                                      id="star-2"
+                                      type="radio"
+                                    />
+                                    <label for="star-2">
+                                      <svg
+                                        viewBox="0 0 24 24"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                      >
+                                        <path
+                                          d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"
+                                          pathLength="360"
+                                        ></path>
+                                      </svg>
+                                    </label>
+                                    <input
+                                      value="star-1"
+                                      name="star-radio"
+                                      id="star-3"
+                                      type="radio"
+                                    />
+                                    <label for="star-3">
+                                      <svg
+                                        viewBox="0 0 24 24"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                      >
+                                        <path
+                                          d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"
+                                          pathLength="360"
+                                        ></path>
+                                      </svg>
+                                    </label>
+                                    <input
+                                      value="star-1"
+                                      name="star-radio"
+                                      id="star-4"
+                                      type="radio"
+                                    />
+                                    <label for="star-4">
+                                      <svg
+                                        viewBox="0 0 24 24"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                      >
+                                        <path
+                                          d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"
+                                          pathLength="360"
+                                        ></path>
+                                      </svg>
+                                    </label>
+                                    <input
+                                      value="star-1"
+                                      name="star-radio"
+                                      id="star-5"
+                                      type="radio"
+                                    />
+                                    <label for="star-5">
+                                      <svg
+                                        viewBox="0 0 24 24"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                      >
+                                        <path
+                                          d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"
+                                          pathLength="360"
+                                        ></path>
+                                      </svg>
+                                    </label>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-lg-12">
+                                <div class="comment__form-desc">
+                                  <div class="form-group">
+                                    <textarea
+                                      class="form-control comment__form-desc-textarea"
+                                      placeholder="Nhập vào đánh giá của bạn"
+                                    ></textarea>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-lg-6">
+                                <div class="comment__form-name">
+                                  <div class="form-group">
+                                    <input
+                                      type="text"
+                                      class="form-control comment__form-name-input"
+                                      placeholder="Họ và tên"
+                                    />
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-lg-6">
+                                <div class="comment__form-email">
+                                  <div class="form-group">
+                                    <input
+                                      type="email"
+                                      class="form-control comment__form-email-input"
+                                      placeholder="Email"
+                                    />
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-lg-12">
+                                <div class="comment__form-submit">
+                                  <button class="btn comment__form-btn">
+                                    <span>Gửi đánh giá của bạn</span>
+                                  </button>
+                                </div>
+                              </div>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-4">
+                <div class="news__title-right">
+                  <h2>Tin nổi bật</h2>
+                </div>
+                <div class="row gy-4">
+                  <div class="col-lg-12">
+                    <a href="" class="news__side d-flex">
+                      <div class="news__side-img">
+                        <img src="../assets/img/blog1.jpg" alt="" />
+                      </div>
+                      <p class="news__side-content">
+                        Khoảng gần một tuần nay, do ảnh hưởng của những cơn mưa
+                        lớn kéo dài liên tiếp nên nguồn cung rau xanh cho các
+                        chợ bắt đầu khan hiếm, giá tăng mạnh, thậm chí nhiều
+                        loại giá tăng gần gấp đôi.
+                      </p>
+                    </a>
+                  </div>
+                  <div class="col-lg-12">
+                    <a href="" class="news__side d-flex">
+                      <div class="news__side-img">
+                        <img src="../assets/img/blog1.jpg" alt="" />
+                      </div>
+                      <p class="news__side-content">
+                        Khoảng gần một tuần nay, do ảnh hưởng của những cơn mưa
+                        lớn kéo dài liên tiếp nên nguồn cung rau xanh cho các
+                        chợ bắt đầu khan hiếm, giá tăng mạnh, thậm chí nhiều
+                        loại giá tăng gần gấp đôi.
+                      </p>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <!-- footer -->
+      <footer>
+        <div class="footer">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-3 px-5">
+                <div class="footer__logo">
+                  <a class="text-white" href="../index.html">
+                    <img src="../assets/img/logo .png" alt="footer_img" />
+                  </a>
+                </div>
+              </div>
+              <div class="col-lg-3 px-5">
+                <div class="footer__contact">Liên hệ</div>
+              </div>
+              <div class="col-lg-3 px-5">
+                <div class="footer__contact">Hỗ trợ khách hàng</div>
+              </div>
+              <div class="col-lg-3 px-5">
+                <div class="footer__contact">Tải xuống</div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-3 px-5">
+                <div class="footer__desc">
+                  <p>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                    Dignissimos commodi sed tenetur aut minus iusto ex
+                    necessitatibus architecto ea error velit odit nesciunt harum
+                    illo excepturi quaerat blanditiis, alias id?
+                  </p>
+                </div>
+              </div>
+
+              <div class="col-lg-3 px-5">
+                <div class="footer__desc">
+                  <a href="">Email: tanvnph33606@fpt.edu.vn</a>
+                </div>
+                <div class="footer__desc">
+                  <a href="">Phone: 0332225690</a>
+                </div>
+                <div class="footer__desc">
+                  <a href="">
+                    Address: 54A Đ. Nguyễn Chí Thanh, Láng Thượng, Đống Đa, Hà
+                    Nội
+                  </a>
+                </div>
+              </div>
+
+              <div class="col-lg-3 px-5">
+                <div class="footer__desc">
+                  <a href="">Email: tanvnph33606@fpt.edu.vn</a>
+                </div>
+                <div class="footer__desc">
+                  <a href="">Phone: 0332225690</a>
+                </div>
+                <div class="footer__desc">
+                  <a href="">
+                    Address: 54A Đ. Nguyễn Chí Thanh, Láng Thượng, Đống Đa, Hà
+                    Nội
+                  </a>
+                </div>
+              </div>
+
+              <div class="col-lg-3 px-5">
+                <div class="footer__desc">
+                  <p>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                    Dignissimos commodi sed tenetur aut minus iusto ex
+                    necessitatibus architecto ea error velit odit nesciunt harum
+                    illo excepturi quaerat blanditiis, alias id?
+                  </p>
+                </div>
+                <div class="footer__bank d-flex">
+                  <img src="../assets/img/app-store.png" alt="footer" />
+                  <img src="../assets/img/google-store.png" alt="footer" />
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="footer__bot">
+                <div class="footer__bot-text">
+                  © All Copyrights Reserved by <span>Vũ Ngọc Tân</span>
+                </div>
+                <div class="footer__bot-bank">
+                  <div class="footer__bank-img">
+                    <img src="../assets/img/footer1.jpg" alt="footer1" />
+                  </div>
+                  <div class="footer__bank-img">
+                    <img src="../assets/img/footer2.jpg" alt="footer2" />
+                  </div>
+                  <div class="footer__bank-img">
+                    <img src="../assets/img/footer3.jpg" alt="footer1" />
+                  </div>
+                  <div class="footer__bank-img">
+                    <img src="../assets/img/footer4.jpg" alt="footer1" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <!-- boostrap -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- aos -->
+    <script src="../assets/library/aos-master/dist/aos.js"></script>
+
+    <!-- jquery -->
+
+    <script
+      src="https://code.jquery.com/jquery-3.7.0.min.js"
+      integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- slick -->
+    <script src="../assets/library/slick-1.8.1/slick/slick.min.js"></script>
+
+    <!-- main js -->
+    <script src="../assets/js/main.js"></script>
+  </body>
+</html>

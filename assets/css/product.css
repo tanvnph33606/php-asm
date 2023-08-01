@@ -1,0 +1,215 @@
+/* product */
+
+.product {
+  margin: 10rem 0;
+}
+
+.sort__choose .nice-select {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.5rem;
+  color: var(--text-category);
+}
+
+.sort__choose .nice-select .option.selected {
+  font-weight: 600;
+}
+
+.sort__choose .nice-select .option:hover,
+.sort__choose .nice-select .option.focus,
+.sort__choose .nice-select .option.selected.focus {
+  background-color: #f6f6f6;
+  color: var(--main-color);
+}
+.sort__choose .nice-select .option.selected {
+  font-weight: 600;
+}
+.sort::after {
+  position: absolute;
+  content: "";
+  top: 50%;
+  right: 0;
+  background: #e5e5e5;
+  width: 85%;
+  height: 0.1rem;
+  z-index: -1;
+  margin-right: 2rem;
+}
+
+.sort__title h2 {
+  text-transform: capitalize;
+  font-size: 2.2rem;
+  font-weight: 600;
+  background-color: var(--white-color);
+  padding-right: 2rem;
+  color: var(--text-category);
+}
+
+/* product */
+
+.product__main {
+  display: none;
+}
+.product__main.active {
+  display: block;
+}
+
+.product__item {
+  border-radius: 2rem;
+  border: 0.2rem solid var(--main-color);
+  overflow: hidden;
+  z-index: -1;
+}
+
+.product__link {
+  padding: 2rem 4.2rem;
+}
+.product__top {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+}
+
+.product__top-type {
+  background-color: #f2f7f3;
+  color: var(--main-color);
+  padding: 2px 0.8rem;
+  border-radius: 2rem;
+  font-weight: 500;
+}
+.product__top-off {
+  background-color: #f14e18;
+  color: var(--white-color);
+  padding: 2px 0.8rem;
+  border-radius: 2rem;
+  font-weight: 500;
+}
+.product__mid {
+  padding: 3.5rem 0;
+  overflow: hidden;
+  transform: scale(1);
+  min-width: 20rem;
+  height: 25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 1s linear;
+}
+.product__mid img {
+  min-width: 20rem;
+  min-height: 15rem;
+  transition: all 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+
+.product__item:hover .product__mid img {
+  transform: translateY(-1.8rem);
+}
+
+.product__text {
+  margin-left: 0.8rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #aeaeae;
+}
+.product__content {
+  margin: 0.5rem 0;
+  padding-top: 0.8rem;
+}
+.product__title {
+  width: 100%;
+  font-size: 2rem;
+  font-weight: 600;
+  text-transform: capitalize;
+  color: var(--text-title);
+}
+.product__price {
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+.product__price-new {
+  color: var(--main-color);
+  margin-right: 0.4rem;
+}
+.product__price-old {
+  font-weight: 500;
+  font-size: 1.3rem;
+  color: #aeaeae;
+  text-decoration: line-through;
+}
+
+/* filter */
+
+.filter__banner {
+  margin-top: 1rem;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+.filter__banner img {
+  transform: scale(1);
+  transition: all 0.3s linear;
+}
+.filter__banner img:hover {
+  filter: brightness(0.9);
+  transform: scale(1.04);
+}
+.filter__category {
+  border: 0.1rem solid #deecf0;
+  padding: 3rem;
+  margin-top: 2rem;
+  border-radius: 1rem;
+}
+.filter__title h2 {
+  font-size: 2.4rem;
+  color: var(--text-category);
+  font-weight: 700;
+  margin-bottom: 1.8rem;
+}
+
+.form-check {
+  margin-bottom: 0.6rem;
+  margin-left: 1.2rem;
+}
+.form-check-input {
+  font-size: 1.6rem;
+}
+.form-check-label {
+  font-size: 1.5rem;
+  font-weight: 500;
+  cursor: pointer;
+  color: var(--text-title);
+}
+.filter__price {
+  margin-top: 2rem;
+
+  padding: 3rem;
+  border: 0.1rem solid #deecf0;
+  border-radius: 1rem;
+}
+.filter__range {
+  margin-top: 2.2rem;
+  border: none;
+}
+.filter__text {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.4rem;
+  margin-bottom: 1.2rem;
+  font-weight: 500;
+  color: var(--text-title);
+}
+
+.filter__range-price {
+  background-color: #f5f5f6;
+}
+.filter__range-price .ui-slider-range {
+  background-color: var(--main-color);
+  opacity: 0.7;
+}
+.filter__range-price .ui-state-default {
+  background-color: var(--main-color);
+  border: none;
+  width: 1.8rem;
+  height: 1.8rem;
+  top: -60%;
+  border: 1px solid var(--white-color);
+  border-radius: 50%;
+}

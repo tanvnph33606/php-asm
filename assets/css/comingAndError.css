@@ -1,0 +1,215 @@
+.align-items-center {
+  height: 100vh;
+}
+
+.coming-content {
+  text-align: center;
+}
+
+.coming-title {
+  font-weight: 700;
+  font-style: italic;
+  letter-spacing: -0.3px;
+  text-transform: uppercase;
+  margin-bottom: 4rem;
+  font-size: 5rem;
+  text-align: center;
+}
+
+.coming-clock {
+  margin-bottom: 4rem;
+  padding-bottom: 4rem;
+  border-bottom: 1px solid #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.countdown-time {
+  padding: 0px 3rem;
+  position: relative;
+  color: #39404a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.countdown-time::before {
+  position: absolute;
+  content: ":";
+  top: 28%;
+  left: -3px;
+  font-size: 25px;
+  transform: translateY(-50%);
+  color: #39404a;
+}
+.countdown-time:first-child::before {
+  position: absolute;
+  content: "";
+}
+
+.coming-subtitle {
+  font-weight: 400;
+  margin-bottom: 3rem;
+  text-transform: uppercase;
+}
+
+.coming-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2.5rem;
+}
+
+.countdown-time span {
+  display: block;
+  font-size: 4rem;
+  font-weight: 700;
+  line-height: 4rem;
+  color: var(--main-color);
+}
+
+.countdown-time small {
+  margin-top: 6px;
+  font-size: 1.6rem;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+.coming-form input {
+  width: 40rem;
+  height: 5rem;
+  padding: 0px 2.5rem;
+  font-size: 1.4rem;
+  border-radius: 5rem;
+  background: var(--white-color);
+  box-shadow: var(--primary-bshadow);
+  border: none;
+}
+
+.coming-form button {
+  margin-left: 1.5rem;
+}
+
+.coming-form button i {
+  width: 5rem;
+  height: 5rem;
+  font-size: 1.8rem;
+  line-height: 5rem;
+  border-radius: 50%;
+  text-align: center;
+  display: inline-block;
+  color: var(--main-color);
+  background: var(--white-color);
+  box-shadow: var(--primary-bshadow);
+  transition: all linear 0.3s;
+}
+
+.coming-form button i:hover {
+  color: var(--white-color);
+  background: var(--main-color);
+}
+
+.coming-social a {
+  width: 4rem;
+  height: 4rem;
+  font-size: 1.6rem;
+  line-height: 4rem;
+  border-radius: 50%;
+  margin: 0px 5px;
+  text-align: center;
+  color: var(--main-color);
+  background: var(--white-color);
+  text-shadow: var(--primary-tshadow);
+  box-shadow: var(--primary-bshadow);
+  transition: all linear 0.3s;
+}
+
+.coming-social a:hover {
+  color: var(--white-color);
+  background: var(--main-color);
+}
+
+@media (max-width: 575px) {
+  .coming-title {
+    font-size: 3.5rem;
+    margin-bottom: 3.5rem;
+  }
+
+  .coming-timer span {
+    font-size: 2.5rem;
+    padding: 0px 1.5rem;
+  }
+
+  .coming-timer span small {
+    font-size: 1.5rem;
+  }
+
+  .coming-form input {
+    width: 100%;
+  }
+}
+
+@media (max-width: 991px) {
+  .coming-part {
+    padding: 5rem 0px;
+  }
+
+  .align-items-center {
+    height: auto;
+  }
+
+  .coming-social {
+    margin-bottom: 4rem;
+  }
+}
+
+/* error */
+.error-part {
+  text-align: center;
+}
+
+.error-part h1 {
+  margin-bottom: 1rem;
+  color: var(--main-color);
+  font-size: 5rem;
+  font-weight: 600;
+  letter-spacing: -0.3px;
+}
+
+.error-part img {
+  margin-bottom: 3rem;
+}
+
+.error-part h3 {
+  text-transform: uppercase;
+  margin-bottom: 3px;
+  font-weight: 500;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.error-part p {
+  margin-bottom: 2.1rem;
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+
+.error-part a {
+  font-size: 1.4rem;
+  padding: 1rem 3.5rem;
+  border-radius: 8px;
+  letter-spacing: 0.3px;
+  color: var(--white-color);
+  background: var(--main-color);
+  text-transform: uppercase;
+  font-weight: 500;
+  transition: all linear 0.3s;
+  border: 1px solid transparent;
+}
+.error-part a:hover {
+  cursor: pointer;
+  color: var(--main-color);
+  background: var(--white-color);
+  border: 1px solid var(--main-color);
+}
